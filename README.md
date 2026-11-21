@@ -4,7 +4,7 @@ Draws [Giggly](https://github.com/giggleton/giggly) plots in [Livebook](https://
 A plot left as a cell's last value draws itself below the cell:
 
 ```elixir
-Giggly.Datasets.mtcars()
+GigDatasets.mtcars()
 |> Giggly.Plot.new(%{x: :wt, y: :mpg, color: :cyl})
 |> Giggly.Plot.geom_point()
 ```

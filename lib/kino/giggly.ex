@@ -5,7 +5,7 @@ defmodule Kino.Giggly do
   A `Giggly.Plot` left as a cell's last value draws itself below the cell, at
   `Giggly.to_svg/2`'s default size of 700 by 433 pixels:
 
-      Giggly.Datasets.mtcars()
+      GigDatasets.mtcars()
       |> Giggly.Plot.new(%{x: :wt, y: :mpg})
       |> Giggly.Plot.geom_point()
 
@@ -20,7 +20,7 @@ defmodule Kino.Giggly do
   for an option it does not take.
 
       iex> image =
-      ...>   Giggly.Datasets.mtcars()
+      ...>   GigDatasets.mtcars()
       ...>   |> Giggly.Plot.new(%{x: :wt, y: :mpg})
       ...>   |> Giggly.Plot.geom_point()
       ...>   |> Kino.Giggly.new(width: 400, height: 300)

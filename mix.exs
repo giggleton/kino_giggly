@@ -25,6 +25,7 @@ defmodule KinoGiggly.MixProject do
     [
       {:giggly, path: "../giggly"},
       {:kino, "~> 0.19"},
+      {:gig_datasets, path: "../gig_datasets", only: [:dev, :test]},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.40", only: :dev, runtime: false}
     ]

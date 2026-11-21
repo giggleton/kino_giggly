@@ -7,7 +7,7 @@ defmodule Kino.GigglyTest do
 
   setup do
     plot =
-      Giggly.Datasets.mtcars()
+      GigDatasets.mtcars()
       |> Plot.new(%{x: :wt, y: :mpg})
       |> Plot.geom_point()
 
