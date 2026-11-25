@@ -2,6 +2,7 @@ defmodule KinoGiggly.MixProject do
   use Mix.Project
 
   @version "0.1.0"
+  @source_url "https://github.com/giggleton/kino_giggly"
 
   def project do
     [
@@ -9,25 +10,44 @@ defmodule KinoGiggly.MixProject do
       version: @version,
       elixir: "~> 1.20",
       deps: deps(),
+      aliases: aliases(),
       description: "Draws Giggly plots in Livebook.",
-      package: [licenses: ["MIT"]],
+      source_url: @source_url,
+      package: [licenses: ["MIT"], links: %{"GitHub" => @source_url}],
       docs: [main: "Kino.Giggly", source_ref: "v#{@version}"]
     ]
+  end
+
+  # `mix quality` runs in test, the environment its `mix test` step needs.
+  def cli do
+    [preferred_envs: [quality: :test]]
   end
 
   def application do
     []
   end
 
-  # Giggly is taken by path from the checkout beside this one until it is released; a Hex
-  # release of this package waits for Giggly's.
+  # gig_datasets holds the tables the tests and the doc examples draw.
   defp deps do
     [
-      {:giggly, path: "../giggly"},
+      {:giggly, "~> 0.2.0"},
       {:kino, "~> 0.19"},
-      {:gig_datasets, path: "../gig_datasets", only: [:dev, :test]},
+      {:gig_datasets, "~> 0.1.0", only: [:dev, :test]},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.40", only: :dev, runtime: false}
+    ]
+  end
+
+  # The commit gate: run bare before every commit; it stops at the first step that fails.
+  defp aliases do
+    [
+      quality: [
+        "format --check-formatted",
+        "hex.audit",
+        "compile --warnings-as-errors",
+        "test --warnings-as-errors",
+        "credo --strict"
+      ]
     ]
   end
 end

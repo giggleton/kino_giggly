@@ -18,16 +18,17 @@ Kino.Giggly.new(plot, width: 400, height: 300)
 
 ## Installation
 
-Giggly is not yet released. Until it is, install both by path, with the two checkouts side by
-side:
+In a Livebook notebook's setup cell, install Giggly and KinoGiggly together; the examples above
+take their data from gig_datasets:
 
 ```elixir
 Mix.install([
-  {:giggly, path: "/path/to/giggly"},
-  {:kino_giggly, path: "/path/to/kino_giggly"}
+  {:giggly, "~> 0.2.0"},
+  {:kino_giggly, "~> 0.1.0"},
+  {:gig_datasets, "~> 0.1.0"}
 ])
 ```
 
-## Licence
+## License
 
 MIT; see [LICENSE](LICENSE).
