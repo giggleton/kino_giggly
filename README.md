@@ -23,9 +23,9 @@ take their data from gig_datasets:
 
 ```elixir
 Mix.install([
-  {:giggly, "~> 0.2.0"},
-  {:kino_giggly, "~> 0.1.0"},
-  {:gig_datasets, "~> 0.1.0"}
+  {:giggly, "~> 0.3.0"},
+  {:kino_giggly, "~> 0.2.0"},
+  {:gig_datasets, "~> 0.2.0"}
 ])
 ```
 

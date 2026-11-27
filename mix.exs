@@ -1,7 +1,7 @@
 defmodule KinoGiggly.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.2.0"
   @source_url "https://github.com/giggleton/kino_giggly"
 
   def project do
@@ -30,9 +30,9 @@ defmodule KinoGiggly.MixProject do
   # gig_datasets holds the tables the tests and the doc examples draw.
   defp deps do
     [
-      {:giggly, "~> 0.2.0"},
+      {:giggly, "~> 0.3.0"},
       {:kino, "~> 0.19"},
-      {:gig_datasets, "~> 0.1.0", only: [:dev, :test]},
+      {:gig_datasets, "~> 0.2.0", only: [:dev, :test]},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.40", only: :dev, runtime: false}
     ]
